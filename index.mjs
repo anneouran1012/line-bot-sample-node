@@ -27,6 +27,10 @@ app.listen(8080);
 const lineApi = new LineApi(CHANNEL_ACCESS_TOKEN);
 const datastore = new DataStore();
 
+app.get('/', (request, response) => {
+  response.status(200).send('Hello');
+});
+
 // webhookを受け取るエンドポイントを定義
 // POST /webhook
 app.post('/webhook', (request, response, buf) => {
